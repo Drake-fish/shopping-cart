@@ -14,9 +14,5 @@ export default React.createClass({
   },
   handleClick(e){
     store.cart.removeItem(this.props.item);
-  },
-  handleChange(e){
-    store.cart.addItem(this.props.item);
-    store.cart.getTotal();
   }
 });

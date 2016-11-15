@@ -28,7 +28,7 @@ export default React.createClass({
       <ul>
       {allCartItems}
       </ul>
-      <span className="total">Total: ${store.cart.getTotal()}</span>
+      <span className="total">Total: ${store.cart.get('total')}</span>
       </div>
     );
   }
