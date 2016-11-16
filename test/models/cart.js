@@ -45,25 +45,24 @@ describe('cart model',()=>{
   // change events
 
   it('should add an item to the items array when running addItem',()=>{
-    cart.addItem({name:'Drake',age:27});
-    expect(cart.get('items')).to.deep.equal([{name:'Drake',age:27}]);
+    cart.addItem(3,4,{Drake:'hello'});
+    expect(cart.get('items')).to.deep.equal([{Drake:'hello',quantity:4,total:12}]);
   });
   it('should remove an item from the items array when running removeItem',()=>{
-    cart.addItem('Drake');
-    cart.removeItem('Drake');
+    cart.removeItem();
     expect(cart.get('items')).to.deep.equal([]);
   });
   it('should fire a change event when addItem is called',()=>{
     let spy=sinon.spy();
     cart.on('change',spy);
-    cart.addItem('Drake');
+    cart.addItem(3,4,{Drake:'hello'});
     expect(spy.callCount).to.equal(1);
   });
   it('should fire a change event when removeItem is called',()=>{
     let spy=sinon.spy();
-    cart.addItem('Drake');
     cart.on('change',spy);
-    cart.removeItem('Drake');
+    cart.addItem(3,4,{Drake:'hello'});
+    cart.removeItem({Drake:'hello',quantity:4,total:12});
     expect(spy.callCount).to.equal(1);
   });
   it('should not fire a change event when getTotal is called',()=>{
@@ -76,13 +75,13 @@ describe('cart model',()=>{
 
   //robust tests on methods
   it('should update the total when addItem is called',()=>{
-    cart.addItem({movie:'hello',price:10});
-    expect(cart.get('total')).to.equal(10);
+    cart.addItem(3,4,{Drake:'hello'});
+    expect(cart.get('total')).to.equal(12);
     });
     // This tests for if stuff is getting run inside my methods!
     it('should run the total function when I fire the addItem function',()=>{
       let spy= sinon.spy(cart,'getTotal');
-      cart.addItem('Drake');
+      cart.addItem(3,4,{Drake:'hello'});
       expect(spy.callCount).to.equal(1);
     });
     it('should run the total function when I fire the addItem function',()=>{

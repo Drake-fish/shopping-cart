@@ -9,11 +9,24 @@ export default Backbone.Model.extend({
 
   },
 addItem(price,quantity,item){
+let items=this.get('items');
+    //s ask if it's in the list and if it is add to the quantity else add it.
+    if(items.indexOf(item)===-1){
+      let newPrice=price*quantity;
+      item.total=newPrice;
+      item.quantity=quantity;
+
+    let newItems=this.get('items').concat(item);
+    this.set({'items':newItems,'total': this.getTotal(newItems)});
+  }else{
     let newPrice=price*quantity;
     item.total=newPrice;
     item.quantity=quantity;
-    let newItems=this.get('items').concat(item);
-    this.set({'items':newItems,'total': this.getTotal(newItems)});
+    let items=this.get('items');
+  let newItems=this.get('items').splice(item);
+  this.set({'items':newItems,'total': this.getTotal(newItems)});
+
+  }
 
   },
 removeItem(item){

@@ -6,12 +6,12 @@ export default React.createClass({
     console.log(this.props.item);
     return(
       <li>
-      <img className="cart-pic" src={this.props.item.picture}/>
-      <span>{this.props.item.name}</span>
-      <span>${this.props.item.price}</span>
-      <span>QTY:{this.props.item.quantity}</span>
+        <img className="cart-pic" src={this.props.item.picture}/>
+        <span className="name">{this.props.item.name}</span>
+        <span className="price">${this.props.item.price}</span>
+        <span className="quantity">QTY:{this.props.item.quantity}</span>
 
-      <input value="Remove" type="button" onClick={this.handleClick}/>
+        <input value="Remove" type="button" onClick={this.handleClick}/>
       </li>
     );
   },

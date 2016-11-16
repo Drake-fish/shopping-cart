@@ -16,7 +16,7 @@ export default React.createClass({
       <span>{this.props.item.name}</span>
       <span>${this.props.item.price}</span>
       <span className="qty">Qty</span>
-      <input type="number" className="quantity" id={this.props.item.name} defaultValue='1' onChange={this.handleChange} placeholder="quantity"/>
+      <input type="number" className="quantity" id={this.props.item.name} defaultValue='1' placeholder="quantity"/>
       <input value="+ Add to cart" type="button" onClick={this.handleClick}/>
       </div>
       </li>
@@ -24,13 +24,11 @@ export default React.createClass({
   },
 
   handleClick(e){
-    let quantity=document.getElementById(this.props.item.name).value;
+    let quantity=Number(document.getElementById(this.props.item.name).value);
     if(quantity<=0){
       alert('it must be more than 1');
     }else{
       let price=this.props.item.price;
-      // this.props.item.price=price;
-      // this.props.item.quantity=quantity;
       store.cart.addItem(price,quantity,this.props.item);
   }
   }

@@ -6,6 +6,7 @@ export default React.createClass({
   getInitialState(){
     return{
       cart: store.cart.toJSON()
+
     };
   },
   componentDidMount(){
@@ -28,7 +29,7 @@ export default React.createClass({
       <ul>
       {allCartItems}
       </ul>
-      <span className="total">Total: ${store.cart.get('total')}</span>
+      <span className="total">Total: ${this.state.cart.total}</span>
       </div>
     );
   }
