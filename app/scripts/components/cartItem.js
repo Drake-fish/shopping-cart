@@ -8,6 +8,8 @@ export default React.createClass({
       <img className="cart-pic" src={this.props.item.picture}/>
       <span>{this.props.item.name}</span>
       <span>${this.props.item.price}</span>
+      <span>QTY:{this.props.item.quantity}</span>
+
       <input value="Remove" type="button" onClick={this.handleClick}/>
       </li>
     );
