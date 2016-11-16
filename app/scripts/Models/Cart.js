@@ -5,15 +5,14 @@ import _ from 'underscore';
 export default Backbone.Model.extend({
   defaults:{
     items:[],
-    quantities:[],
     total:0
 
   },
-addItem(item){
-    console.log(item);
-    console.log(this.get('items'));
+addItem(price,quantity,item){
+    let newPrice=price*quantity;
+    item.total=newPrice;
+    item.quantity=quantity;
     let newItems=this.get('items').concat(item);
-    console.log(newItems);
     this.set({'items':newItems,'total': this.getTotal(newItems)});
 
   },
@@ -23,9 +22,8 @@ removeItem(item){
 
 },
 getTotal(newItems){
-let prices= _.pluck(newItems,'price');
-
-  let cartTotal= prices.reduce(function(a,b){
+let prices= _.pluck(newItems,'total');
+let cartTotal= prices.reduce(function(a,b){
     return a+b;
   },0);
  return cartTotal;

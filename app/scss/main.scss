@@ -22,9 +22,7 @@ color: #AFC6D7;
   }
 
 }
-.qty{
-  float:none;
-}
+
 #shoppingcart{
 font-size: 1.5rem;
 float: right;
@@ -61,7 +59,6 @@ ul{
     padding-bottom:1rem;
   }
   input{
-    float:right;
     margin-right:1rem;
   }
 }
@@ -98,4 +95,11 @@ padding-bottom: 1rem;
 .prices{
   border-top: 1px solid white;
 padding-top: 1rem;
+}
+.quantity{
+  width:5%;
+}
+.qty{
+  margin-left:11rem;
+  margin-right:.5rem;
 }

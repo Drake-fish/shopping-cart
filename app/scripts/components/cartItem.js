@@ -3,6 +3,7 @@ import React from 'react';
 import store from '../store';
 export default React.createClass({
   render(){
+    console.log(this.props.item);
     return(
       <li>
       <img className="cart-pic" src={this.props.item.picture}/>
