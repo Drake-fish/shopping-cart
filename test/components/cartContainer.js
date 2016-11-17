@@ -20,5 +20,10 @@ describe('cart Component',()=>{
     expect(cart.children('ul')).to.have.length(1);
 });
 
+// it('the total should equal whats passed in as total',()=>{
+//   cart.setState({'total': 20});
+//   expect(cart.find('.total').text()).to.equal('Total: $20');
+//
+// });
 
 });

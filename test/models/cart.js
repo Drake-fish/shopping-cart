@@ -89,4 +89,7 @@ describe('cart model',()=>{
       cart.removeItem('Drake');
       expect(spy.callCount).to.equal(1);
     });
+    // it('should throw an error when the quantity is less than 1',()=>{
+    //   expect(cart.addItem.bind(cart,0,0,{Drake:'hello'})).to.throw();
+    // });
 });

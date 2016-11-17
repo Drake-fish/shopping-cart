@@ -10,7 +10,6 @@ export default React.createClass({
         <span className="name">{this.props.item.name}</span>
         <span className="price">${this.props.item.price}</span>
         <span className="quantity">QTY:{this.props.item.quantity}</span>
-
         <input value="Remove" type="button" onClick={this.handleClick}/>
       </li>
     );

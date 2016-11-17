@@ -14,11 +14,11 @@ export default React.createClass({
     });
     return(
       <div className="everything">
-      <div className="products">
-      <h2>Our Products</h2>
-      <ul>{allMerch}</ul>
-      </div>
-      <CartContainer/>
+            <div className="products">
+              <h2>Our Products</h2>
+              <ul>{allMerch}</ul>
+            </div>
+        <CartContainer/>
       </div>
     );
   }

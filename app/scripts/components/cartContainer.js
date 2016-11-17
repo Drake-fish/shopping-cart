@@ -11,7 +11,10 @@ export default React.createClass({
   },
   componentDidMount(){
     store.cart.on('change update',()=>{
-      this.setState({cart:store.cart.toJSON()});
+      this.setState({cart:store.cart.toJSON(),
+        
+      });
+
     });
   },
   render(){
@@ -22,12 +25,12 @@ export default React.createClass({
 });
     return(
       <div className="cart">
-      <div className="title">
-      <h2>Your Cart</h2>
-      <i id="shoppingcart" className="fa fa-shopping-cart" aria-hidden="true"></i>
-      </div>
+        <div className="title">
+          <h2>Your Cart</h2>
+          <i id="shoppingcart" className="fa fa-shopping-cart" aria-hidden="true"></i>
+        </div>
       <ul>
-      {allCartItems}
+        {allCartItems}
       </ul>
       <span className="total">Total: ${this.state.cart.total}</span>
       </div>
